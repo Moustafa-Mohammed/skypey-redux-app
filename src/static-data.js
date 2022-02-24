@@ -1,18 +1,17 @@
-import { v4 as shortid } from "uuid";
-// shortid.generate() returns a unique "short" id
+import { v4 as uuid } from "uuid";
+// uuid() returns a unique id
 
 import { faker } from "@faker-js/faker"; // faker is used for generating random fake data.
 
 const { sentence } = require("txtgen/dist/cjs/txtgen.js"); // sentence() returns random "readable" sentences
-const _ = require("lodash"); // lodash is a utility lib for Javascript
 
 const users = generateUsers(10);
-export const contacts = Object.keys(users, "user_id");
+export const contacts = Object.values(users, "user_id");
 export const getMessages = (messagesPerUser) => {
   let messages = {};
-  _.forEach(users, (user) => {
+  Object.keys(users).forEach((user) => {
     messages[user.user_id] = {
-      ..._.mapKeys(generateMsgs(messagesPerUser), "number"),
+      ...Object.keys(generateMsgs(messagesPerUser), "number"),
     };
   });
   return messages;
@@ -36,7 +35,7 @@ export function generateUser() {
     email: faker.internet.email(),
     profile_pic: faker.internet.avatar(),
     status: sentence(),
-    user_id: shortid(),
+    user_id: uuid(),
   };
 }
 /**

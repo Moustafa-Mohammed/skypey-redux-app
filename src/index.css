@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans: 400,700");
+
 body {
   margin: 0;
   padding: 0;
@@ -6,8 +8,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 #root {
   height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(189, 189, 192, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.541);
+  border-radius: 10px;
 }
