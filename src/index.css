@@ -24,6 +24,6 @@ body {
   background-color: rgba(189, 189, 192, 0.1);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.541);
+  background-color: rgba(50, 156, 218, 0.541);
   border-radius: 10px;
 }

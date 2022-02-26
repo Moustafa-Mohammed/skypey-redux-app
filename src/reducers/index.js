@@ -1,3 +1,8 @@
-export default function (state, action) {
-  return state;
-}
+import { combineReducers } from "redux";
+import contacts from "./contactsReducer";
+import user from "./userReducer";
+
+export default combineReducers({
+  user,
+  contacts,
+});

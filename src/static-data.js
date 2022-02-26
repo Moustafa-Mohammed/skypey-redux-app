@@ -4,9 +4,10 @@ import { v4 as uuid } from "uuid";
 import { faker } from "@faker-js/faker"; // faker is used for generating random fake data.
 
 const { sentence } = require("txtgen/dist/cjs/txtgen.js"); // sentence() returns random "readable" sentences
+const _ = require("lodash");
 
 const users = generateUsers(10);
-export const contacts = Object.values(users, "user_id");
+export const contacts = _.mapKeys(users, "user_id");
 export const getMessages = (messagesPerUser) => {
   let messages = {};
   Object.keys(users).forEach((user) => {
