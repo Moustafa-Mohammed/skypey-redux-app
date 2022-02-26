@@ -1,14 +1,14 @@
 import "./App.css";
-import Main from "../../components/main/Main";
-import Sidebar from "../../components/sidebar/Sidebar";
+import Main from "../../components/Main/Main";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import { store } from "../../store";
 
 function App() {
-  const { contacts } = store.getState();
+  const { contacts, user, activeUserId } = store.getState();
   return (
     <div className="App">
       <Sidebar contacts={contacts} />
-      <Main />
+      <Main activeUserId={activeUserId} user={user} />
     </div>
   );
 }
