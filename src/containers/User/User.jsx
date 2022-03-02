@@ -1,5 +1,5 @@
 import React from "react";
-import { setActiveUserId } from "../../actions";
+import { setActiveUserIdAction } from "../../actions";
 import { store } from "../../store";
 import "./User.css";
 
@@ -8,7 +8,7 @@ function User({ user }) {
   return (
     <div
       className="user"
-      onClick={() => store.dispatch(setActiveUserId(user_id))}
+      onClick={() => store.dispatch(setActiveUserIdAction(user_id))}
     >
       <img src={profile_pic} alt={name} className="User__pic" />
       <div className="User__details">

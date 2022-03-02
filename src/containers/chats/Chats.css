@@ -26,6 +26,7 @@
   border-bottom-left-radius: 10px;
 }
 
+/*Larger screen*/
 @media (min-width: 576px) {
   .Chat {
     max-width: 60%;
