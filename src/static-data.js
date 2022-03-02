@@ -10,9 +10,9 @@ const users = generateUsers(10);
 export const contacts = _.mapKeys(users, "user_id");
 export const getMessages = (messagesPerUser) => {
   let messages = {};
-  Object.keys(users).forEach((user) => {
+  _.forEach(users, (user) => {
     messages[user.user_id] = {
-      ...Object.keys(generateMsgs(messagesPerUser), "number"),
+      ..._.mapKeys(generateMsgs(messagesPerUser), "number"),
     };
   });
   return messages;
